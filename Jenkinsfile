@@ -12,7 +12,7 @@ pipeline {
                 sh '''
                     wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
                     chmod +x dotnet-install.sh
-                    ./dotnet-install.sh --channel 6.0 --runtime dotnet-sdk --install-dir $DOTNET_ROOT
+                    ./dotnet-install.sh --channel 6.0 --install-dir $DOTNET_ROOT
                 '''
             }
         }
