@@ -26,3 +26,5 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Run Unit and Integration Tests
       run: dotnet test --no-build --configuration Release --verbosity normal
+
+      
