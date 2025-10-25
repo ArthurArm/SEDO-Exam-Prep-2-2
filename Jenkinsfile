@@ -7,12 +7,12 @@ pipeline {
     }
 
     stages {
-        stage('Install .NET 6.0 Runtime') {
+        stage('Install .NET 6.0 SDK') {
             steps {
                 sh '''
                     wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
                     chmod +x dotnet-install.sh
-                    ./dotnet-install.sh --channel 6.0 --runtime dotnet --install-dir $DOTNET_ROOT
+                    ./dotnet-install.sh --channel 6.0 --runtime dotnet-sdk --install-dir $DOTNET_ROOT
                 '''
             }
         }
