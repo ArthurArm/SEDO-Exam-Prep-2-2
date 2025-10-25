@@ -16,14 +16,10 @@ pipeline {
                 '''
             }
         }
-        stage('Restore .NET Packages') {
-            steps {
-                sh 'dotnet restore'
-            }
-        }
+
         stage('Build .NET Project') {
             steps {
-                sh 'dotnet build --no-restore --configuration Release'
+                sh 'dotnet build --configuration Release'
             }
         }
         stage('Run Unit and Integration Tests') {
