@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build .NET Project') {
             steps {
-                sh 'dotnet build --no-restore'
+                sh 'dotnet build --no-restore --configuration Release'
             }
         }
         stage('Run Unit and Integration Tests') {
