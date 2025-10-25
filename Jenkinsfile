@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        dotnetsdk 'dotnet-6' 
-    }
-
     stages {
         stage('Restore .NET Packages') {
             steps {
