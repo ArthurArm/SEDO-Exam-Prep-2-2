@@ -1,13 +1,18 @@
 pipeline {
     agent any
 
+    environment {
+        DOTNET_ROOT = "${WORKSPACE}/dotnet"
+        PATH = "${WORKSPACE}/dotnet:${env.PATH}"
+    }
+
     stages {
         stage('Install .NET 6.0 Runtime') {
             steps {
                 sh '''
                     wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
                     chmod +x dotnet-install.sh
-                    ./dotnet-install.sh --channel 6.0 --runtime dotnet --install-dir /usr/share/dotnet
+                    ./dotnet-install.sh --channel 6.0 --runtime dotnet --install-dir $DOTNET_ROOT
                 '''
             }
         }
